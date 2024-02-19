@@ -112,6 +112,37 @@ class LinkedList{
             return null
         }
      }
+
+     //finding a node by value
+     search(value){
+        if(this.isEmpty()){
+            return -1;
+        }
+        let i = 0 ;
+        let curr = this.head
+        while(curr){
+            if(curr.value === value){
+                return i ;
+            }
+            curr = curr.next;
+            i++;
+        }
+        return -1;
+     }
+
+     //reverse()
+     reverse(){
+        let prev = null;
+        let curr = this.head;
+        while(curr){
+            let next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        this.head = prev;
+     }
+
     print(){
         if(this.isEmpty()){
             console.log("this list is empty");
@@ -139,6 +170,7 @@ list.prepend(30);
 list.append(40);
 list.insert(60,0);
 list.print()
-list.removeValue(40)
+console.log(list.search(2)) ;
+list.reverse();
 list.print()
 
