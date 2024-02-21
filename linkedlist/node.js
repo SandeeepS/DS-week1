@@ -161,16 +161,17 @@ class LinkedList{
 
 const list = new LinkedList()
 console.log('List is empty?',list.isEmpty())
+
 console.log('List size ',list.getSize())
-list.print()
 list.prepend(10);
-list.print()
 list.prepend(20);
 list.prepend(30);
 list.append(40);
+list.print();
 list.insert(60,0);
 list.print()
-console.log(list.search(2)) ;
+console.log(list.search(40)) ;
 list.reverse();
 list.print()
+
 
